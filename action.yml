@@ -1,0 +1,22 @@
+name: 'Webmention Parser'
+description: 'Parses webmentions from PR descriptions and creates JSON files'
+author: 'GitHub Copilot'
+
+inputs:
+  pr-body:
+    description: 'The body of the pull request containing target and source URLs'
+    required: true
+  github-token:
+    description: 'GitHub token for commenting on PRs'
+    required: true
+  pr-number:
+    description: 'Pull request number'
+    required: true
+
+outputs:
+  webmention-file:
+    description: 'Path to the created webmention JSON file'
+
+runs:
+  using: 'node18'
+  main: 'index.js'

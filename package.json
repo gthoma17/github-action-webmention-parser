@@ -1,0 +1,22 @@
+{
+  "name": "github-action-webmention-parser",
+  "version": "1.0.0",
+  "description": "A GitHub Action to parse webmentions from PR descriptions",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@actions/github": "^6.0.0",
+    "microformat-node": "^2.0.1",
+    "node-fetch": "^2.7.0"
+  },
+  "keywords": [
+    "github-action",
+    "webmention",
+    "microformats"
+  ],
+  "author": "GitHub Copilot",
+  "license": "MIT"
+}

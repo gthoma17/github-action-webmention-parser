@@ -1,0 +1,26 @@
+name: Webmention Parser
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  parse-webmention:
+    runs-on: ubuntu-latest
+    if: startsWith(github.event.pull_request.title, 'New webmention')
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Parse webmention
+        uses: ./
+        with:
+          pr-body: ${{ github.event.pull_request.body }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          pr-number: ${{ github.event.pull_request.number }}
